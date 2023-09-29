@@ -9,7 +9,10 @@ const app = express();
 //conexão
 const conn = require("./db/conn");
 const { request } = require("http");
+
 //IMPORT Models
+const User = require("./models/User");
+const Thought = require("./models/Thought");
 
 //IMPORT Rotas
 
@@ -69,4 +72,4 @@ conn
   .then(() => {
     app.listen(2222);
   })
-  .catch((err) =>console.log(err));
+  .catch((err) => console.log(err));
