@@ -15,6 +15,7 @@ const Thought = require("./models/Thought");
 
 //IMPORT Rotas
 const toughtsRoutes = require("./routes/toughtsRoutes");
+const authRouters = require('./routes/authRouters')
 
 //IMPORT Controller
 const ToughtController = require("./controllers/ToughtController");
@@ -66,7 +67,12 @@ app.use((request, response, next) => {
 
 //ROTAS DA APLICAÇÃO
 app.use("/toughts", toughtsRoutes);
-app.get("/", ToughtController.showThoughts);
+//MILDDLEWARE DAS ROTAS
+app.use("/", authRouters)
+
+app.get("/", ToughtController.showThoughts);//home
+
+
 //CONEXÃO E CRIAÇÃO DAS TABELAS DO BANCO
 conn
   .sync()

@@ -1,21 +1,21 @@
-:root{
-  --backgroud:#1c1c1c;
-  --blue:#068fff;
-  --white:#fff;
+:root {
+  --backgroud: #1c1c1c;
+  --blue: #068fff;
+  --white: #fff;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: var(--backgroud);
   color: var(--white);
-  font-family:'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
-#logo img{
+#logo img {
   height: 50px;
 }
-#navbar{
+#navbar {
   padding: 1.2rem 1.4rem;
   margin-bottom: 1rem;
   display: flex;
@@ -24,35 +24,114 @@
   background-color: var(--backgroud);
   border-bottom: 2px solid var(--white);
 }
-#navbar ul{
+#navbar ul {
   display: flex;
   list-style: none;
 }
-#navbar ul li{
-margin-left: 1rem;
+#navbar ul li {
+  margin-left: 1rem;
 }
-#navbar ul li a{
+#navbar ul li a {
   text-decoration: none;
   font-weight: bold;
   transition: 0.5s;
 }
-#navbar ul li a:hover{
+#navbar ul li a:hover {
   color: var(--blue);
 }
 /* trabalhar container */
 
-.container{
+.container {
   min-height: 70vh;
   padding: 2rem;
 }
 /* footer */
-footer{
+footer {
   height: 150px;
   display: grid;
   place-items: center;
-  border-top: 2px solid var(--blue);
+  border-top: 2px solid var(--white);
 }
-footer span{
+footer span {
   font-weight: bold;
   color: var(--blue);
 }
+/* MESSAGE */
+.message {
+  padding: 1rem;
+  color: var(--blue);
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 2rem;
+  max-width: 60%;
+}
+
+/*Register  */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  max-width: 400px;
+}
+.hr {
+  display: flex;
+  font-size: 18px;
+  margin-bottom: 19px;
+  gap: 10px;
+}
+.hr h2 {
+  margin-top: 10px;
+}
+.form-control {
+  margin-bottom: 15px;
+}
+.form-control input {
+  background-color: var(--backgroud);
+  border: 2px solid var(--white);
+
+  width: 468px;
+  padding: 1rem;
+}
+input:focus {
+  border-color: #068fff;
+  outline: none;
+}
+
+.form-control label {
+  font-weight: bold;
+}
+.auth-container input[type="submit"] {
+  width: 154px;
+  padding: 10px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 19.5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.auth-container p {
+  margin-top: 13px;
+}
+.auth-container a {
+  color: var(--blue);
+}
+
+.auth-container hr {
+  width: 6px;
+  height: 55px;
+  background-color: #068fff;
+  border: 1px solid var(--blue);
+}
+/* SUBSTITUIÇÃO para o HR
+aut-container h2::before{
+content:"" ;
+padding: 4px;
+backgrond-color:var(--blue);
+margin:0 7px 0 0;
+padding-top:55px;
+}*/
