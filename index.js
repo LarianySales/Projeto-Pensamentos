@@ -8,16 +8,16 @@ const flash = require("express-flash");
 const app = express();
 //conexão
 const conn = require("./db/conn");
-const { request } = require("http");
 
 //IMPORT Models
 const User = require("./models/User");
 const Thought = require("./models/Thought");
 
 //IMPORT Rotas
+const toughtsRoutes = require("./routes/toughtsRoutes");
 
 //IMPORT Controller
-
+const ToughtController = require("./controllers/ToughtController");
 //CONFIGURAR A ENGINE
 app.engine("handlebars", exhbs.engine());
 app.set("view engine", "handlebars");
@@ -64,8 +64,9 @@ app.use((request, response, next) => {
   next();
 });
 
-//TOTAS DA APLICAÇÃO
-
+//ROTAS DA APLICAÇÃO
+app.use("/toughts", toughtsRoutes);
+app.get("/", ToughtController.showThoughts);
 //CONEXÃO E CRIAÇÃO DAS TABELAS DO BANCO
 conn
   .sync()

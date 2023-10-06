@@ -1,0 +1,58 @@
+:root{
+  --backgroud:#1c1c1c;
+  --blue:#068fff;
+  --white:#fff;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--backgroud);
+  color: var(--white);
+  font-family:'Courier New', Courier, monospace;
+}
+
+#logo img{
+  height: 50px;
+}
+#navbar{
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--backgroud);
+  border-bottom: 2px solid var(--white);
+}
+#navbar ul{
+  display: flex;
+  list-style: none;
+}
+#navbar ul li{
+margin-left: 1rem;
+}
+#navbar ul li a{
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s;
+}
+#navbar ul li a:hover{
+  color: var(--blue);
+}
+/* trabalhar container */
+
+.container{
+  min-height: 70vh;
+  padding: 2rem;
+}
+/* footer */
+footer{
+  height: 150px;
+  display: grid;
+  place-items: center;
+  border-top: 2px solid var(--blue);
+}
+footer span{
+  font-weight: bold;
+  color: var(--blue);
+}
