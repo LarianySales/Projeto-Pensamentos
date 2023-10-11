@@ -36,7 +36,7 @@
   font-weight: bold;
   transition: 0.5s;
 }
-#navbar ul li a:hover {
+#navbar ul li a:hover{
   color: var(--blue);
 }
 /* trabalhar container */
@@ -104,7 +104,7 @@ input:focus {
 .form-control label {
   font-weight: bold;
 }
-.auth-container input[type="submit"] {
+.auth-container input[type=submit] {
   width: 154px;
   padding: 10px;
   border: 2px solid var(--blue);
@@ -113,6 +113,11 @@ input:focus {
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
+  transition: 0.5s;
+}
+.auth-container input[type=submit]:hover{
+  background-color: var(--blue);
+  color: var(--white);
 }
 .auth-container p {
   margin-top: 13px;

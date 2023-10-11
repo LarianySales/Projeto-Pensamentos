@@ -59,7 +59,7 @@ app.use(express.static("public"));
 
 //vaai criar um middleware que quando o user for fazer algum registro na aplicação seja registrado,esse middleware vai abstrair esses contextos
 app.use((request, response, next) => {
-  if (request.session.UserId) {
+  if (request.session.userId) {
     response.locals.session = request.session;
   }
   next();
