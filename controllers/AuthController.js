@@ -83,4 +83,5 @@ module.exports = class AuthController {
     request.session.destroy();
     response.redirect("/login");
   }
+
 };
