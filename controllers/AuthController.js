@@ -6,6 +6,32 @@ module.exports = class AuthController {
   static async login(request, response) {
     return response.render("auth/login");
   }
+  static async loginPost(request, response) {
+    const { email, password } = request.body;
+
+    const user = await User.findOne({ where: { email: email } });
+//Validar email
+
+    if(!user){
+      request.flash("message", "Usuário não encontrado");
+      response.redirect('/login')
+      // return
+    }
+    //Validar senha
+    const passwordMatch = bcrypt.compareSync(password, user.password)
+    if(!passwordMatch){
+      request.flash("message", "Senha inválida");
+      response.redirect('/login')
+    }
+    //se o usuário está logado
+    request.session.userId = user.id;
+
+    request.flash("message", "Autenticação realizado com sucesso");
+    request.session.save(() => {
+      response.redirect("/");
+    });
+  }
+
   static async register(request, response) {
     return response.render("auth/register");
   }
@@ -49,14 +75,12 @@ module.exports = class AuthController {
       request.session.save(() => {
         response.redirect("/");
       });
-
     } catch (error) {
       console.log(error);
     }
   }
-  static async logout(request, response){
-    request.session.destroy()
-      response.redirect('/login')
-
+  static async logout(request, response) {
+    request.session.destroy();
+    response.redirect("/login");
   }
 };
