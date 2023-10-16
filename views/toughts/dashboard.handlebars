@@ -4,4 +4,17 @@
     <a href="/toughts/add" class="btn">Criar Pensamento</a>
   </div>
   <h3>Seus Pensamentos</h3>
+  <ul>
+   {{#each toughts}}
+   <li>
+    <span>{{this.title}}</span>
+<span>
+  <a href="/editTougth">Editar</a>
+</span>
+<span>
+  <a href="/excluir">Excluir</a>
+</span>
+   </li>
+   {{/each}}
+  </ul>
 </section>

@@ -169,7 +169,7 @@ width: 100vh;
   margin:0 7px 0 0;
   padding-top:14px;
   }
-  .title-container .btn {
+  .title-container a{
     text-decoration: none;
     width: 250px;
     padding: 10px;
