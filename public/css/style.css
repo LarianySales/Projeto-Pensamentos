@@ -140,3 +140,80 @@ backgrond-color:var(--blue);
 margin:0 7px 0 0;
 padding-top:55px;
 }*/
+.tought-form-container{
+display: flex;
+margin: 0 auto;
+justify-content: center;
+flex-direction: column;
+  gap: 30px;
+  width: 500px;
+}
+.Dashboard{
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin: 0 auto;
+gap: 10px;
+width: 100vh;
+}
+.title-container{
+  display: flex;
+  width:100vh;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.title-container h2::before{
+  content:"" ;
+  padding: 4px;
+  background-color:var(--blue);
+  margin:0 7px 0 0;
+  padding-top:14px;
+  }
+  .title-container .btn {
+    text-decoration: none;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    font-size: 19.5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.5s;
+    text-align: center;
+  }
+  .title-container a:hover{
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+.tought-form-container a{
+  text-decoration: none;
+
+}
+.tought-form-container h1::before{
+  content: "";
+  padding: 4px;
+  background-color: var(--blue);
+  margin: 0 7px 0 0;
+  padding-top: 14px;
+}
+.form-control label{
+font-weight: bold;
+font-size: 20px;
+}
+form input[type=submit] {
+  width: 209px;
+  padding: 10px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 19.5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+form input[type=submit]:hover{
+  background-color: var(--blue);
+  color: var(--white);
+}
