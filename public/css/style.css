@@ -203,7 +203,7 @@ font-weight: bold;
 font-size: 20px;
 }
 form input[type=submit] {
-  width: 209px;
+  width: 220px;
   padding: 10px;
   border: 2px solid var(--blue);
   color: var(--blue);
@@ -217,3 +217,43 @@ form input[type=submit]:hover{
   background-color: var(--blue);
   color: var(--white);
 }
+/* Dashboard */
+.Dashboard ul li{
+  list-style: none;
+}
+.Dashboard span{
+  color: var(--blue);
+  font-size: 20px;
+
+}
+.actions input[type=submit] ,.actions button{
+  width: 104px;
+  padding: 10px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 19.5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+.actions input[type=submit]:hover ,.actions button:hover{
+  background-color: var(--blue);
+  color: var(--white);
+}
+.actions a{
+  background: none;
+  color: var(--blue);
+  text-decoration: none;
+
+}
+.actions a:hover{
+  color: #fff;
+}
+.actions{
+  display: flex;
+gap: 30px;
+  max-width:100vh ;
+}
+
+

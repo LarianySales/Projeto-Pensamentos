@@ -12,4 +12,14 @@ router.get("/add",checkAuth, ToughtController.createTought);
 router.post("/add",checkAuth, ToughtController.createToughtSave);
 router.get("/", ToughtController.showThoughts);
 
+router.post("/remove",checkAuth,ToughtController.removeTought);
+
+//Vai mostrar o formulario
+router.get("/edit/:id",checkAuth,ToughtController.editTought);
+//vai editar o comentario
+router.post("/edit/:id",checkAuth,ToughtController.editToughtSave);
+
+
+
+
 module.exports = router;
