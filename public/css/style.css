@@ -221,10 +221,21 @@ form input[type=submit]:hover{
 .Dashboard ul li{
   list-style: none;
 }
-.Dashboard span{
+/* .Dashboard span{
   color: var(--blue);
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 
+
+} */
+/* .Dashboard article{
+  display: flex;
+
+} */
+.Dashboard{
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--blue);
 }
 .actions input[type=submit] ,.actions button{
   width: 104px;
@@ -250,10 +261,15 @@ form input[type=submit]:hover{
 .actions a:hover{
   color: #fff;
 }
-.actions{
+.Dashboard li {
   display: flex;
 gap: 30px;
-  max-width:100vh ;
+}
+
+.buttons {
+  display: flex;
+ justify-content: space-between;
+ gap: 30px;
 }
 
 

@@ -3,26 +3,29 @@
     <h2>Dashboard</h2>
     <a href="/toughts/add" class="btn">Criar Pensamento</a>
   </div>
-  <h3>Seus Pensamentos</h3>
-  <div class="tought">
+    <h3>Seus Pensamentos</h3>
+ <article>
     <ul>
     {{#each toughts}}
       <li>
         <span>{{this.title}}</span>
-        <span class="actions">
+        <div class="actions">
+          <span class="buttons">
           <form action="/toughts/remove" method="post">
             <input type="hidden" name="id" value="{{this.id}}" />
             <input type="submit" value="Excluir" />
 
           </form>
           <button> <a href="/toughts/edit/{{this.id}}">Editar</a></button>
+          </span>
 
-        </span>
+        </div>
       </li>
     {{/each}}
   </ul>
   {{#if emptyTought }}
   <p>Ainda não existe pensamentos,comece a criar <a href="/toughts/add">Por aqui</a></p>
   {{/if}}
-  </div>
+
+ </article>
 </section>
