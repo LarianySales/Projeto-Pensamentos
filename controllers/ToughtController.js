@@ -78,7 +78,7 @@ module.exports = class ToughtController {
     const { title } = request.body;
 
     try {
-      const tought = await Tought.findByPk(id);
+      const tought = await Tought.findByPk(id); // procurara pela chave primaria- find by primary key
       if (!tought) {
         return response
           .status(404)
