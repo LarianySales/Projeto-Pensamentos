@@ -220,7 +220,6 @@ form input[type=submit]:hover{
 /* Dashboard */
 .Dashboard ul li{
   list-style: none;
-  gap: 500px;
 }
 .Dashboard span{
   color: var(--blue);
@@ -231,34 +230,27 @@ form input[type=submit]:hover{
 }
 .Dashboard article{
   display: flex;
-padding: 2px;
+
 }
 .Dashboard{
   padding-bottom: 8px;
+}
+.toughts{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
   border-bottom: 2px solid var(--blue);
+  padding: .5rem;
+
 }
-.actions input[type=submit] ,.actions button{
-  width: 104px;
-  padding: 10px;
-  border: 2px solid var(--blue);
-  color: var(--blue);
-  font-size: 19.5px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: 0.5s;
-}
-.actions input[type=submit]:hover ,.actions button:hover{
-  background-color: var(--blue);
-  color: var(--white);
-}
-.actions a{
+
+.buttons a{
   background: none;
   color: var(--blue);
   text-decoration: none;
 
 }
-.actions a:hover{
+.buttons a:hover{
   color: #fff;
 }
 .Dashboard li {
@@ -271,5 +263,91 @@ gap: 30px;
  justify-content: space-between;
  gap: 30px;
 }
+.buttons button, .buttons input[type=submit]{
+  width: 104px;
+  padding: .5rem;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 19.5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.5s;
+}
 
+.buttons input[type=submit]:hover ,.buttons button:hover{
+  background-color: var(--blue);
+  color: var(--white);
+}
+/* HOME */
+.home-header{
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.home-header h1{
+  margin: 1rem;
+}
+.home-header a{
+  color: var(--white);
+}
+.home-header p,
+.home-header form{
+  margin-bottom: 1rem;
+}
+.home-header input{
+  border: none;
+  border-bottom: 1px solid var(--white);
+  padding: .5rem;
+  margin-right: 1rem;
+}
+.home-header input[type=text]{
+  width: 70%;
+  font-size: 18px;
+}
+.home-header input::placeholder{
+  color: var(--white);
+}
+
+.order-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto 1rem;
+}
+.order-container form{
+  margin: 0;
+}
+.order-container button{
+margin-bottom: 0;
+border: none;
+cursor: pointer;
+}
+.order-container button:hover,
+.order-container i:hover,
+.order-container a :hover{
+  color: var(--blue);
+}
+.order-container button,
+.order-container i,
+.order-container a{
+margin: 0 7px;
+}
+.toghts-container figure{
+  border-bottom:1px solid #333;
+  padding: 0.5rem;
+  max-width: 70%;
+  margin: 0 auto 1rem;
+}
+.toghts-container blockquote{
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+.toghts-container span{
+  color: var(--blue);
+}
 

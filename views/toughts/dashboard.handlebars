@@ -7,9 +7,10 @@
  <article>
     <ul>
     {{#each toughts}}
+    <div class="toughts">
       <li>
         <span>{{this.title}}</span>
-        <div class="actions">
+        {{!-- <div class="actions"> --}}
           <span class="buttons">
           <form action="/toughts/remove" method="post">
             <input type="hidden" name="id" value="{{this.id}}" />
@@ -19,8 +20,10 @@
           <button> <a href="/toughts/edit/{{this.id}}">Editar</a></button>
           </span>
 
-        </div>
+        {{!-- </div> --}}
+
       </li>
+      </div>
     {{/each}}
   </ul>
   {{#if emptyTought }}

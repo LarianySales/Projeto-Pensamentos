@@ -6,7 +6,13 @@ const User = require("../models/User");
 
 module.exports = class ToughtController {
   static async showThoughts(request, response) {
-    return response.render("toughts/home");
+    const toughtsData = await Tought.findAll({
+      include: User,
+    });
+
+    const toughts = toughtsData.map((result) => result.get({plain:true})); //pega o array e transformar ele para trabalhar ele - no caso foi pra mostrar as info do user do pensamento
+    console.log(toughts);
+    return response.render("toughts/home", { toughts });
   }
   static async dashboard(request, response) {
     const userId = request.session.userId;
@@ -73,25 +79,26 @@ module.exports = class ToughtController {
   }
 
   static async editToughtSave(request, response) {
-    const id = request.params.id;
-
-    const { title } = request.body;
+    const { title, id } = request.body;
 
     try {
       const tought = await Tought.findByPk(id); // procurara pela chave primaria- find by primary key
       if (!tought) {
         return response
           .status(404)
-          .json({ "message": "Pensament não encontrado" });
+          .json({ message: "Pensament não encontrado" });
       }
       tought.title = title;
 
       await tought.save();
 
-      return response.redirect("/toughts/dashboard");
+      request.flash("message", "Pensamento atualizado com sucesso 🐼");
+      request.session.save(() => {
+        response.redirect("/toughts/dashboard");
+      });
     } catch (error) {
       console.log(`Deu erro: ${error}`);
-      return response.status(500).json({ "message": "Erro interno" });
+      return response.status(500).json({ message: "Erro interno" });
     }
   }
 };
