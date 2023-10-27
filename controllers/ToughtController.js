@@ -1,18 +1,38 @@
-const { request } = require("express");
-const { where } = require("sequelize");
+// const { request } = require("express");
+// const { where } = require("sequelize");
 
 const Tought = require("../models/Thought");
 const User = require("../models/User");
 
+const { Op } = require("sequelize");
+
 module.exports = class ToughtController {
   static async showThoughts(request, response) {
+    let search = "";
+    if (request.query.search) {
+      search = request.query.search;
+    }
+    // console.log(search)
+    // ordenação
+    let order = "DESC";
+    if (request.query.order === "old") {
+      order = "ASC";
+    } else {
+      order = "DESC";
+    }
+
     const toughtsData = await Tought.findAll({
       include: User,
+      where: {
+        title: { [Op.like]: `%${search}%` },
+      },
+      order:[['createdAt',order]]
     });
 
-    const toughts = toughtsData.map((result) => result.get({plain:true})); //pega o array e transformar ele para trabalhar ele - no caso foi pra mostrar as info do user do pensamento
-    console.log(toughts);
-    return response.render("toughts/home", { toughts });
+    const toughts = toughtsData.map((result) => result.get({ plain: true })); //pega o array e transformar ele para trabalhar ele - no caso foi pra mostrar as info do user do pensamento
+    // console.log(toughts);
+    const toughtQty = toughts.length
+    return response.render("toughts/home", { toughts, search ,toughtQty});
   }
   static async dashboard(request, response) {
     const userId = request.session.userId;

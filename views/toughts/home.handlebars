@@ -1,6 +1,16 @@
 <section class="home-header">
+  {{#if search }}
+  <h1>Você está buscando por: <span>{{search}}</span></h1>
+  {{#if toughtQty}}
+  <p>Foram encontrados {{toughtQty}} pensamentos</p>
+  {{else}}
+  <p>Nenhum pensamento foi encontrado com o termo "{{search}}"</p>
+  {{/if}}
+  {{else}}
+  <h1>Conheça alguns dos nossos pensamentos</h1>
+  {{/if}}
   <h1>Todos os pensamentos</h1>
-  <form action="/" method="post">
+  <form action="/" method="get">
     <input type="text" name="search" placeholder="Está buscando algo" />
     <input type="submit" class="button" value="Buscar" />
   </form>
@@ -14,8 +24,6 @@
         Mais novos
       </button>
     </form>
-
-
 
     <form action="/" method="get">
       <input type="hidden" name="search" value="{{this.search}}" />

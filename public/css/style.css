@@ -310,6 +310,9 @@ gap: 30px;
 .home-header input::placeholder{
   color: var(--white);
 }
+.home-header input::placeholder{
+  color: var(--blue);
+}
 
 .order-container{
   display: flex;
